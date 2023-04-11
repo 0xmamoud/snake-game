@@ -140,6 +140,11 @@ function moveSnake() {
   if (collisionChecker(head, snakeBody, width, height)) {
     clearInterval(gameLoop);
     endGame.style.display = "block";
+    const restart = document.querySelector(".restart");
+    restart.addEventListener("click", () => {
+      endGame.style.display = "none";
+      window.location.reload();
+    })
     return;
   }
 }
